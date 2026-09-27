@@ -1,0 +1,110 @@
+{
+  "meeting_001": {
+    "action_items": [
+      {
+        "task": "Fix the validation issue",
+        "owner": "Rahul",
+        "deadline": "Friday",
+        "status": "assigned"
+      },
+      {
+        "task": "Update the API documentation",
+        "owner": "Ananya",
+        "deadline": "Monday",
+        "status": "assigned"
+      },
+      {
+        "task": "Add automated login tests",
+        "owner": "Rahul",
+        "deadline": "next Wednesday",
+        "status": "assigned"
+      }
+    ]
+  },
+
+  "meeting_002": {
+    "action_items": [
+      {
+        "task": "Finish the dashboard filters",
+        "owner": "Rohan",
+        "deadline": "October 5",
+        "status": "assigned"
+      },
+      {
+        "task": "Review the onboarding screens and suggest improvements",
+        "owner": "Meera",
+        "deadline": "Friday",
+        "status": "assigned"
+      },
+      {
+        "task": "Update the product documentation",
+        "owner": "Karan",
+        "deadline": "October 10",
+        "status": "assigned"
+      }
+    ]
+  },
+
+  "meeting_003": {
+    "action_items": [
+      {
+        "task": "Review the campaign budget",
+        "owner": null,
+        "deadline": "before Friday",
+        "status": "unassigned"
+      },
+      {
+        "task": "Prepare the campaign presentation slides",
+        "owner": "Arjun",
+        "deadline": "Wednesday",
+        "status": "assigned"
+      }
+    ]
+  },
+
+  "meeting_004": {
+    "action_items": [
+      {
+        "task": "Investigate the payment callback issues and send the findings",
+        "owner": "Sameer",
+        "deadline": "tomorrow",
+        "status": "assigned"
+      },
+      {
+        "task": "Prepare the deployment checklist",
+        "owner": "Priya",
+        "deadline": "next Monday",
+        "status": "assigned"
+      },
+      {
+        "task": "Prepare the testing report",
+        "owner": "Anjali",
+        "deadline": "Friday",
+        "status": "assigned"
+      }
+    ]
+  },
+
+  "meeting_005": {
+    "action_items": [
+      {
+        "task": "Investigate the inventory discrepancies",
+        "owner": "Aman",
+        "deadline": "tomorrow",
+        "status": "assigned"
+      },
+      {
+        "task": "Complete the warehouse safety checklist",
+        "owner": "Riya",
+        "deadline": "October 15",
+        "status": "assigned"
+      },
+      {
+        "task": "Update the inventory report after identifying the discrepancies",
+        "owner": "Aman",
+        "deadline": "Friday",
+        "status": "assigned"
+      }
+    ]
+  }
+}

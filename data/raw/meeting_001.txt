@@ -1,0 +1,25 @@
+Priya: Good morning everyone. Let's start with the sprint review. The login page redesign is almost complete.
+
+Rahul: Yes, the frontend changes are done. I still need to fix the validation issue.
+
+Priya: Rahul, please fix the validation issue by Friday.
+
+Rahul: Sure, I'll complete it by Friday.
+
+Ananya: The API documentation is also incomplete.
+
+Priya: Ananya, can you update the API documentation by Monday?
+
+Ananya: Yes, I'll update it.
+
+Vikram: We also discussed adding automated tests for the login flow.
+
+Rahul: I can add those tests after fixing the validation issue.
+
+Priya: Great. Please add the automated login tests by next Wednesday.
+
+Rahul: Understood.
+
+Meera: The deployment environment is ready, so there are no blockers from my side.
+
+Priya: Perfect. Let's meet again next Thursday to review the completed work.
