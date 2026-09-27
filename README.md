@@ -1,76 +1,119 @@
 # 📋 AI Meeting Action-Item Extractor
 
-An AI-powered meeting assistant that extracts structured action items from meeting transcripts using a Large Language Model (LLM). The system preprocesses transcripts, identifies tasks, owners, deadlines, statuses, and confidence scores, validates the extracted information, and evaluates the results against annotated ground truth.
+<div align="center">
 
-> **Developed as Project 2 for the BharatSkillz AI Internship.**
+### AI-powered meeting transcript analysis using Qwen2.5-0.5B, Python, Hugging Face Transformers, and Streamlit.
 
----
+![Python](https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge&logo=python)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.14-red?style=for-the-badge&logo=pytorch)
+![HuggingFace](https://img.shields.io/badge/HuggingFace-Transformers-yellow?style=for-the-badge)
+![Streamlit](https://img.shields.io/badge/Streamlit-App-ff4b4b?style=for-the-badge&logo=streamlit)
+![LLM](https://img.shields.io/badge/LLM-Qwen2.5-success?style=for-the-badge)
 
-## Problem Statement
+**Developed as Project 2 for the BharatSkillz AI Internship**
 
-Meeting transcripts often contain important action items that are difficult to track manually. Team members may miss assigned tasks, deadlines, or ownership details, leading to reduced productivity.
-
-This project automates the extraction of actionable tasks from meeting transcripts while preserving structured information that can be validated and evaluated.
-
----
-
-## Project Objective
-
-Build an AI/NLP pipeline that converts meeting transcripts into structured action items containing:
-
-- Task
-- Owner
-- Deadline
-- Status
-- Confidence
-
-The project focuses on **information extraction**, not meeting summarization.
+</div>
 
 ---
 
-## Features
+# 🚀 Executive Summary
 
-- Extracts action items using **Qwen2.5-0.5B-Instruct**
-- Preserves speaker information during preprocessing
-- Produces structured JSON output
-- Validates extracted information
-- Evaluates predictions against annotated ground truth
-- Simple Streamlit interface with sample transcripts and file upload support
+Teams lose valuable follow-up tasks inside lengthy meeting transcripts.
+
+This project solves that problem by automatically extracting **structured action items**—including task, owner, deadline, status, and confidence score—using a lightweight Large Language Model while validating and evaluating the extracted information.
+
+Instead of generating a generic summary, the system focuses on **actionable task extraction**, making it useful for project management workflows.
 
 ---
 
-## Project Architecture
+# 📖 Project Case Study
+
+## The Challenge
+
+During meetings, important commitments are often buried inside long conversations.
+
+Manual note-taking can result in:
+
+- Missed deadlines
+- Forgotten owners
+- Duplicate follow-ups
+- Poor task tracking
+
+The objective was to build an AI system capable of identifying actionable commitments automatically.
+
+---
+
+## My Approach
+
+I built an end-to-end NLP pipeline that:
+
+1. Loads meeting transcripts.
+2. Preserves speaker information.
+3. Segments conversations into meaningful statements.
+4. Uses **Qwen2.5-0.5B-Instruct** for structured information extraction.
+5. Validates extracted fields.
+6. Evaluates predictions against annotated ground truth.
+7. Displays results through a Streamlit interface.
+
+---
+
+# 🏗️ System Architecture
 
 ```text
 Meeting Transcript
         │
         ▼
 Preprocessing
-(Speaker & Sentence Segmentation)
+(Speaker + Sentence Segmentation)
         │
         ▼
 Qwen2.5-0.5B-Instruct
-(LLM Information Extraction)
         │
         ▼
-Structured JSON Output
+Structured JSON
         │
         ▼
-Validation Module
+Validation
         │
         ▼
-Evaluation Module
+Evaluation
         │
         ▼
-Streamlit Interface
+Streamlit Dashboard
 ```
 
 ---
 
-## Folder Structure
+# ✨ Key Features
+
+- Speaker-aware preprocessing
+- LLM-powered action-item extraction
+- Structured JSON output
+- Validation for missing owners and deadlines
+- Duplicate task detection
+- Ground truth evaluation
+- Interactive Streamlit dashboard
+
+---
+
+# 🛠️ Technology Stack
+
+| Technology | Purpose |
+|------------|---------|
+| Python | Core development |
+| Hugging Face Transformers | LLM integration |
+| Qwen2.5-0.5B-Instruct | Information extraction |
+| PyTorch | Model inference |
+| Streamlit | Web interface |
+| Pandas | Data handling |
+| RapidFuzz | Duplicate detection |
+
+---
+
+# 📂 Project Structure
 
 ```text
-ai-meeting-action-item-extractor/
+AI-Meeting-Action-Item-Extractor/
 │
 ├── app.py
 ├── preprocessing.py
@@ -87,99 +130,16 @@ ai-meeting-action-item-extractor/
 │
 ├── data/
 │   ├── raw/
-│   │   ├── meeting_001.txt
-│   │   ├── meeting_002.txt
-│   │   ├── meeting_003.txt
-│   │   ├── meeting_004.txt
-│   │   └── meeting_005.txt
-│   │
 │   └── annotations/
-│       └── ground_truth.json
 │
-└── .venv/
+└── .gitignore
 ```
 
 ---
 
-## Dataset
+# 📊 Results
 
-The project uses **five meeting transcripts** stored in:
-
-```text
-data/raw/
-```
-
-Each transcript has corresponding annotated ground truth stored in:
-
-```text
-data/annotations/ground_truth.json
-```
-
-Each annotation includes:
-
-- Task
-- Owner
-- Deadline
-- Status
-
-These annotations are used to evaluate model performance.
-
----
-
-## Preprocessing
-
-The preprocessing pipeline performs:
-
-- Transcript loading
-- Speaker identification
-- Sentence segmentation
-- Speaker-aware statement preservation
-
-### Example
-
-**Input**
-
-> Priya: Rahul, please fix the validation issue by Friday.
-
-**Processed Output**
-
-```json
-{
-  "speaker": "Priya",
-  "text": "Rahul, please fix the validation issue by Friday."
-}
-```
-
----
-
-## AI Model
-
-### Selected Model
-
-**Qwen2.5-0.5B-Instruct**
-
-### Why this model?
-
-- Lightweight enough for CPU execution
-- Instruction-tuned for structured extraction tasks
-- Generates structured JSON output
-- Suitable for an internship-scale implementation
-
-### Limitations
-
-Like many LLMs, the model may occasionally:
-
-- assign an incorrect owner
-- infer an incorrect status
-- extract an extra task from contextual statements
-
-These behaviors are intentionally measured during evaluation rather than hidden.
-
----
-
-## Information Extraction
-
-The model extracts:
+The project successfully extracts structured action items containing:
 
 - Task
 - Owner
@@ -201,43 +161,12 @@ The model extracts:
 
 ---
 
-## Validation
+# 📈 Evaluation
 
-The validation module checks for:
+The evaluation module compares predictions against annotated ground truth.
 
-- Missing owners
-- Missing deadlines
-- Duplicate tasks
-- Unexpected status values
-- Confidence normalization
-
-### Example
-
-```text
-Status: In Progress
-↓
-Normalized to:
-Status: in progress
-```
-
----
-
-## Evaluation Methodology
-
-Predictions are compared against annotated ground truth.
-
-The evaluator measures:
-
-- Overall Accuracy
-- Task Accuracy
-- Owner Accuracy
-- Deadline Accuracy
-- Status Accuracy
-
-### Sample Evaluation Output
-
-| Metric | Score |
-|--------|------:|
+| Metric | Result |
+|--------|-------:|
 | Overall Accuracy | 0.58 |
 | Task Accuracy | 0.67 |
 | Owner Accuracy | 0.67 |
@@ -246,64 +175,54 @@ The evaluator measures:
 
 ### Example Error Analysis
 
-| Task | Expected Owner | Predicted Owner |
-|------|---------------|----------------|
+| Task | Expected | Predicted |
+|------|----------|-----------|
 | Fix validation issue | Rahul | Rahul |
 | Update API documentation | Ananya | Ananya |
 | Add automated login tests | Rahul | Vikram |
 
-This demonstrates how the evaluation module identifies genuine model errors instead of masking them.
+Rather than hiding mistakes, the evaluator highlights genuine model limitations.
 
 ---
 
-## Streamlit Interface
+# 🖥️ Application Preview
 
-The application allows users to:
+## Home Screen
 
-- Select one of five sample meeting transcripts
-- Upload a custom transcript
-- Extract structured action items
-- View validation results
+![Home](assets/home.png)
 
 ---
 
-## Screenshots
+## Extraction Results
 
-### Home Screen
-
-![Home Screen](assets/home.png)
-
-### Extraction Results
-
-![Extraction Results](assets/results.png)
-
-### Evaluation Results
-
-![Evaluation Results](assets/evaluation.png)
+![Results](assets/results.png)
 
 ---
 
-## Technology Stack
+## Evaluation Dashboard
 
-| Technology | Purpose |
-|------------|---------|
-| Python | Core development |
-| Hugging Face Transformers | LLM integration |
-| Qwen2.5-0.5B-Instruct | Information extraction |
-| PyTorch | Model inference |
-| Streamlit | User interface |
-| Pandas | Data handling |
-| RapidFuzz | Duplicate detection |
+![Evaluation](assets/evaluation.png)
 
 ---
 
-## Installation
+# 🔄 Workflow
+
+1. Choose one of five sample meeting transcripts.
+2. Upload a custom transcript (optional).
+3. Run AI extraction.
+4. Generate structured JSON.
+5. Validate extracted fields.
+6. Compare predictions with annotated ground truth.
+
+---
+
+# ⚡ Installation
 
 Clone the repository.
 
 ```bash
-git clone https://github.com/your-username/ai-meeting-action-item-extractor.git
-cd ai-meeting-action-item-extractor
+git clone https://github.com/SaanviWatrana/AI-Meeting-Action-Item-Extractor.git
+cd AI-Meeting-Action-Item-Extractor
 ```
 
 Create a virtual environment.
@@ -326,15 +245,15 @@ pip install -r requirements.txt
 
 ---
 
-## Running the Project
+# ▶️ Run the Project
 
-### Run the extraction pipeline
+Run the extraction pipeline.
 
 ```bash
 python model_extractor.py
 ```
 
-### Launch the Streamlit interface
+Launch the Streamlit app.
 
 ```bash
 streamlit run app.py
@@ -342,45 +261,56 @@ streamlit run app.py
 
 ---
 
-## Example Workflow
+# 💡 Challenges Solved
 
-1. Select `meeting_001` from the dropdown.
-2. Click **Extract Action Items**.
-3. View the extracted tasks.
-4. Review validation results.
-5. Compare predictions with annotated ground truth.
+During development I worked through several practical implementation challenges:
 
----
-
-## Future Improvements
-
-Potential future enhancements include:
-
-- stronger owner resolution
-- improved status classification
-- larger annotated datasets
-- optimized prompting for higher extraction accuracy
-- batch transcript evaluation
+- Preserving speaker context.
+- Improving prompts for consistent JSON generation.
+- Normalizing inconsistent status values.
+- Building a validation pipeline.
+- Evaluating outputs against annotated data.
+- Optimizing the application for CPU execution.
 
 ---
 
-## Learning Outcomes
+# 📚 Learning Outcomes
 
-This project demonstrates practical experience with:
+This project strengthened my understanding of:
 
-- Large Language Models (LLMs)
+- Large Language Models
 - NLP information extraction
 - Prompt engineering
-- Data preprocessing
+- Hugging Face Transformers
+- PyTorch inference
 - Validation pipelines
-- Model evaluation
 - Streamlit application development
-- Git/GitHub project organization
+- Git and GitHub workflows
 
 ---
 
-## Project Status
+# 🚀 Future Improvements
 
-**Completed as part of the BharatSkillz AI Internship.**
+Potential next steps include:
 
-The project successfully implements an end-to-end AI workflow for meeting action-item extraction, including preprocessing, LLM-based information extraction, validation, evaluation, and a working Streamlit interface.
+- Better owner resolution
+- Improved status classification
+- Larger annotated datasets
+- Batch transcript processing
+- Higher extraction accuracy through prompt optimization
+
+---
+
+# 🎯 Why This Project Matters
+
+This project demonstrates an end-to-end AI workflow—from data preprocessing and LLM-based extraction to validation, evaluation, and deployment—making it a strong portfolio project for AI, Data Analytics, and Product Management internship applications.
+
+---
+
+<div align="center">
+
+### ⭐ If you found this project interesting, consider starring the repository.
+
+Built with ❤️ using Python, Hugging Face, and Streamlit.
+
+</div>
